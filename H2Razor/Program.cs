@@ -13,6 +13,7 @@ namespace H2Razor
     {
         public static void Main(string[] args)
         {
+
             CreateHostBuilder(args).Build().Run();
         }
 
