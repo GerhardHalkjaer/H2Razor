@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using H2Razor.Repository;
 namespace H2Razor
 {
     public class Startup
@@ -24,7 +24,7 @@ namespace H2Razor
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            
+            services.AddSingleton<IRepository, Repository.Repository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

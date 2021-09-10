@@ -19,7 +19,7 @@ namespace H2Razor.Pages
 
         public void OnGet()
         {
-
+            
         }
     }
 }
