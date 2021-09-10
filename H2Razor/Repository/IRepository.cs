@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using H2Razor.Model;
 
 namespace H2Razor.Repository
 {
-    interface IRepository
+    public interface IRepository
     {
+
+        public List<ToDo> GetAlltoDos();
+
+        public void SaveAllToDos(List<ToDo> todo);
+
     }
 }

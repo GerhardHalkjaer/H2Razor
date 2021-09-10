@@ -25,6 +25,8 @@ namespace H2Razor
         {
             services.AddRazorPages();
             services.AddSingleton<IRepository, Repository.Repository>();
+           //services.AddSingleton<IRepository>(new Repository.Repository());
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
