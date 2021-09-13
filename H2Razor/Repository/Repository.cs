@@ -27,7 +27,7 @@ namespace H2Razor.Repository
             {
                 List<ToDo> _temp = new List<ToDo>();
 
-                _temp.Add(new ToDo { Id = 0, CreatedTime = DateTime.Now, IsCompleted = false, Priority = Prio.normal, TaskDescription = "test data" });
+                _temp.Add(new ToDo { Id = "0", CreatedTime = DateTime.Now, IsCompleted = false, Priority = Prio.normal, TaskDescription = "test data" });
                 return _temp;
             }
 
@@ -41,6 +41,13 @@ namespace H2Razor.Repository
             {
                 serializer.Serialize(writer, todo);
             }
+        }
+
+        public void SaveToDo(ToDo todo)
+        {
+            List<ToDo> toDos = GetAlltoDos();
+            toDos.Add(todo);
+            SaveAllToDos(toDos);
         }
     }
 }

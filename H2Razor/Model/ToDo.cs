@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,8 +8,9 @@ namespace H2Razor.Model
 {
     public class ToDo
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public DateTime CreatedTime { get; set; }
+        [Required,MaxLength(25),MinLength(1)]
         public string TaskDescription { get; set; }
         public Prio Priority { get; set; }
         public bool IsCompleted { get; set; }
