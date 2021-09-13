@@ -23,9 +23,15 @@ namespace H2Razor.Repository
                 }
                 return tempList;
             }
+            else
+            {
+                List<ToDo> _temp = new List<ToDo>();
 
+                _temp.Add(new ToDo { Id = 0, CreatedTime = DateTime.Now, IsCompleted = false, Priority = Prio.normal, TaskDescription = "test data" });
+                return _temp;
+            }
 
-            return null;
+            
         }
 
         public void SaveAllToDos(List<ToDo> todo)

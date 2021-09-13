@@ -12,7 +12,7 @@ namespace H2Razor.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+      
 
         private readonly IRepository _rep;
 
@@ -25,13 +25,14 @@ namespace H2Razor.Pages
         public List<ToDo> toDoList { get; set; }
 
 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
+        //public IndexModel(ILogger<IndexModel> logger)
+        //{
+        //    _logger = logger;
+        //}
 
         public void OnGet()
         {
+            toDoList = _rep.GetAlltoDos();
             //set todolist
         }
     }

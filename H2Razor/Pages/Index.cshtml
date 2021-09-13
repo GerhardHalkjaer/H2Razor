@@ -6,5 +6,32 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    
+
+    <div>
+        <table>
+
+            @foreach (var item in Model.toDoList)
+            {
+                @if (item.IsCompleted == false)
+                {
+
+                    <tr class="table">
+                        <td>@Html.DisplayFor(m => item.Id)</td>
+                        <td>@Html.DisplayFor(m => item.CreatedTime)</td>
+                        <td>@Html.DisplayFor(m => item.TaskDescription)</td>
+                        <td>@Html.DisplayFor(m => item.Priority)</td>
+                        <td>@Html.DisplayFor(m => item.IsCompleted)</td>
+
+
+                    </tr>
+
+                }
+
+
+
+
+
+            }
+        </table>
+    </div>
 </div>
