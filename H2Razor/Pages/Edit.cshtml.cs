@@ -33,7 +33,8 @@ namespace H2Razor.Pages
             todo.TaskDescription = Request.Form["TaskDescription"];
             todo.Priority = (Prio)Convert.ToInt32(Request.Form["prio"]);
             todo.Id = Request.Form["id"];
-            todo.CreatedTime = (DateTime)Request.Form["CreateDate"];
+            todo.CreatedTime = DateTime.Parse(Request.Form["CreateDate"]);
+            
             _rep.UpdateToDo(todo);
         }
 

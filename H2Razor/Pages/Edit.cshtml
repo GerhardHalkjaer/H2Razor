@@ -11,7 +11,7 @@
         <br />
 
         <label>Creation date</label>
-        <input type="datetime" name="CreateDate" asp-for="@Model.todo.CreatedTime" />
+        <input type="datetime-local" name="CreateDate" asp-for="@Model.todo.CreatedTime" asp-format="{0:yyyy-MM-ddTHH:mm}" />
         <br />
         <label>Task description</label>
         <input type="text" name="TaskDescription" asp-for="@Model.todo.TaskDescription" />
