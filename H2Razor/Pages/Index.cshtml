@@ -1,4 +1,5 @@
 ﻿@page
+
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -11,33 +12,33 @@
         <form asp-page="Create" method="get">
             <button class="btn btn-primary">Create Todo</button>
         </form>
+
     </div>
 
     <div>
-        <table>
+        <form method="post">
+            <table>
 
-            @foreach (var item in Model.toDoList)
-            {
-                @if (item.IsCompleted == false)
+                @foreach (var item in Model.toDoList)
                 {
+                    @if (item.IsCompleted == false)
+                    {
 
-                    <tr class="table">
-                        <td>@Html.DisplayFor(m => item.Id)</td>
-                        <td>@Html.DisplayFor(m => item.CreatedTime)</td>
-                        <td>@Html.DisplayFor(m => item.TaskDescription)</td>
-                        <td>@Html.DisplayFor(m => item.Priority)</td>
-                        <td>@Html.DisplayFor(m => item.IsCompleted)</td>
+                        <tr class="table">
+                            <td>@Html.DisplayFor(m => item.Id)</td>
+                            <td>@Html.DisplayFor(m => item.CreatedTime)</td>
+                            <td>@Html.DisplayFor(m => item.TaskDescription)</td>
+                            <td>@Html.DisplayFor(m => item.Priority)</td>
+                            <td>@Html.DisplayFor(m => item.IsCompleted)</td>
+                            @*  <td><button asp-page="./edit" asp-route-id="">edit</button></td>*@
+                            @*<td><a asp-page="./Edit" asp-route-id="@item.Id">Edit</a></td>*@
+                            <td> <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a></td>
+                        </tr>
 
-
-                    </tr>
+                    }
 
                 }
-
-
-
-
-
-            }
-        </table>
+            </table>
+        </form>
     </div>
 </div>

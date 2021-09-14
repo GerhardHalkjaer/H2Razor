@@ -49,5 +49,14 @@ namespace H2Razor.Repository
             toDos.Add(todo);
             SaveAllToDos(toDos);
         }
+
+        public void UpdateToDo(ToDo todo)
+        {
+            List<ToDo> allToDos = GetAlltoDos();
+            allToDos[allToDos.FindIndex(x => x.Id == todo.Id)] = todo;
+
+            SaveAllToDos(allToDos);
+            
+        }
     }
 }

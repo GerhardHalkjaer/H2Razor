@@ -14,6 +14,8 @@ namespace H2Razor.Repository
         public void SaveAllToDos(List<ToDo> todo);
 
         public void SaveToDo(ToDo todo);
+
+        public void UpdateToDo(ToDo todo);
         
 
     }

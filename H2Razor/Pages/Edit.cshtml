@@ -1,0 +1,36 @@
+﻿@page "{id}"
+@model H2Razor.Pages.EditModel
+@{
+}
+
+<div>
+    <form method="post">
+
+        <label>id</label>
+        <input type="text" name="id" readonly="@(true)" asp-for="@Model.todo.Id" />
+        <br />
+
+        <label>Creation date</label>
+        <input type="datetime" name="CreateDate" asp-for="@Model.todo.CreatedTime" />
+        <br />
+        <label>Task description</label>
+        <input type="text" name="TaskDescription" asp-for="@Model.todo.TaskDescription" />
+        <br />
+        <label>Priority</label>
+        <select name="prio" asp-for="@Model.todo.Priority" asp-items="Html.GetEnumSelectList<Model.Prio>()" >
+
+        </select>
+        <br />
+        <label>Is Completed</label>
+        <input type="checkbox" name="IsCompleted" asp-for="@Model.todo.IsCompleted" />
+        <br />
+
+        <button type="submit" >Save</button>
+
+
+
+    </form>
+
+
+</div>
+
