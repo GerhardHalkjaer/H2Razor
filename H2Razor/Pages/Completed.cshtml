@@ -1,0 +1,43 @@
+﻿@page
+@model H2Razor.Pages.CompletedModel
+@{
+
+    ViewData["Title"] = "Completed ToDo's";
+}
+
+
+
+
+
+<div>
+    <form method="post">
+        <table>
+            @foreach (H2Razor.Model.ToDo item in Model.toDoList)
+            {
+                @if (item.IsCompleted == true)
+                {
+                    <tr class="table">
+                       @* <td><input type="text" name="" readonly="@(true)" value="@item.Id" /></td>*@
+                        <td>@Html.DisplayFor(m => item.Id)</td>
+                        <td>@Html.DisplayFor(m => item.CreatedTime)</td>
+                        <td>@Html.DisplayFor(m => item.TaskDescription)</td>
+                        <td>@Html.DisplayFor(m => item.Priority)</td>
+                        <td>@Html.DisplayFor(m => item.IsCompleted)</td>
+                        <td><button type="submit">Delete</button></td>
+                    </tr>
+
+
+                }
+
+
+            }
+
+
+        </table>
+
+    </form>
+
+</div>
+
+
+

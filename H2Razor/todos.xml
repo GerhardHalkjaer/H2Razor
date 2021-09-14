@@ -12,6 +12,20 @@
     <CreatedTime>2021-09-14T14:40:00</CreatedTime>
     <TaskDescription>banana</TaskDescription>
     <Priority>normal</Priority>
+    <IsCompleted>true</IsCompleted>
+  </ToDo>
+  <ToDo>
+    <Id>b3e0d8cf-b6a4-4c99-a125-3b573524e71a</Id>
+    <CreatedTime>2021-09-14T22:32:00</CreatedTime>
+    <TaskDescription>one</TaskDescription>
+    <Priority>normal</Priority>
+    <IsCompleted>true</IsCompleted>
+  </ToDo>
+  <ToDo>
+    <Id>9388407b-16ff-4969-b02f-5db63fcf2c23</Id>
+    <CreatedTime>2021-09-14T22:32:37.1463057+02:00</CreatedTime>
+    <TaskDescription>two</TaskDescription>
+    <Priority>normal</Priority>
     <IsCompleted>false</IsCompleted>
   </ToDo>
 </ArrayOfToDo>
