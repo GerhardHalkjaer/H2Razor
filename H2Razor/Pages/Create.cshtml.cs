@@ -14,7 +14,9 @@ namespace H2Razor.Pages
         private readonly IRepository _rep;
 
         [BindProperty]
-        public ToDo toDo { get; set; }
+        public ToDo ToDo { get; set; }
+        public Prio prio { get; set; }
+        //TODO: priority
 
         public CreateModel(IRepository rep)
         {
@@ -32,11 +34,11 @@ namespace H2Razor.Pages
                 return Page();
             }
 
-            toDo.CreatedTime = DateTime.Now;
-            toDo.IsCompleted = false;
-            toDo.Id = Guid.NewGuid().ToString();
+            ToDo.CreatedTime = DateTime.Now;
+            ToDo.IsCompleted = false;
+            ToDo.Id = Guid.NewGuid().ToString();
 
-            _rep.SaveToDo(toDo);
+            _rep.SaveToDo(ToDo);
             return RedirectToPage("index");
 
         }

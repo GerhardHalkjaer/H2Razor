@@ -12,7 +12,7 @@ namespace H2Razor.Pages
 {
     public class IndexModel : PageModel
     {
-      
+        
 
         private readonly IRepository _rep;
 
