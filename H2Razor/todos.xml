@@ -2,9 +2,9 @@
 <ArrayOfToDo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ToDo>
     <Id>0</Id>
-    <CreatedTime>2021-09-14T14:38:12.7994238+02:00</CreatedTime>
+    <CreatedTime>2021-09-14T14:38:00</CreatedTime>
     <TaskDescription>cake</TaskDescription>
-    <Priority>normal</Priority>
+    <Priority>High</Priority>
     <IsCompleted>false</IsCompleted>
   </ToDo>
   <ToDo>
@@ -23,8 +23,22 @@
   </ToDo>
   <ToDo>
     <Id>9388407b-16ff-4969-b02f-5db63fcf2c23</Id>
-    <CreatedTime>2021-09-14T22:32:37.1463057+02:00</CreatedTime>
+    <CreatedTime>2021-09-14T22:32:00</CreatedTime>
     <TaskDescription>two</TaskDescription>
+    <Priority>low</Priority>
+    <IsCompleted>true</IsCompleted>
+  </ToDo>
+  <ToDo>
+    <Id>be7a538c-6139-49cc-be3d-dca629b0be2b</Id>
+    <CreatedTime>2021-09-16T11:15:00</CreatedTime>
+    <TaskDescription>jj</TaskDescription>
+    <Priority>low</Priority>
+    <IsCompleted>false</IsCompleted>
+  </ToDo>
+  <ToDo>
+    <Id>c8536631-d747-46f3-8637-26b6f31428c6</Id>
+    <CreatedTime>2021-09-15T11:14:21.706091+02:00</CreatedTime>
+    <TaskDescription>ost</TaskDescription>
     <Priority>normal</Priority>
     <IsCompleted>false</IsCompleted>
   </ToDo>

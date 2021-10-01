@@ -16,17 +16,30 @@
             {
                 @if (item.IsCompleted == true)
                 {
-                    <tr class="table">
-                       @* <td><input type="text" name="" readonly="@(true)" value="@item.Id" /></td>*@
-                        <td>@Html.DisplayFor(m => item.Id)</td>
-                        <td>@Html.DisplayFor(m => item.CreatedTime)</td>
-                        <td>@Html.DisplayFor(m => item.TaskDescription)</td>
-                        <td>@Html.DisplayFor(m => item.Priority)</td>
-                        <td>@Html.DisplayFor(m => item.IsCompleted)</td>
-                        <td><button type="submit">Delete</button></td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>GUID</th>
+                            <th>Created time</th>
+                            <th>Task Description</th>
+                            <th>Priority</th>
+                            <th>Is completed</th>
+                            
+                        </tr>
+                    </thead>
 
+                    <tbody>
 
+                        <tr class="table">
+                            @* <td><input type="text" name="" readonly="@(true)" value="@item.Id" /></td>*@
+                            <td>@Html.DisplayFor(m => item.Id)</td>
+                            <td>@Html.DisplayFor(m => item.CreatedTime)</td>
+                            <td>@Html.DisplayFor(m => item.TaskDescription)</td>
+                            <td>@Html.DisplayFor(m => item.Priority)</td>
+                            <td>@Html.DisplayFor(m => item.IsCompleted)</td>
+                            <td><button type="submit">Delete</button></td>
+                        </tr>
+
+                    </tbody>
                 }
 
 

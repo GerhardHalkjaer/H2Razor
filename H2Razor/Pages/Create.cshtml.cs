@@ -22,7 +22,7 @@ namespace H2Razor.Pages
         {
             _rep = rep;
         }
-        
+
         public void OnGet()
         {
         }
@@ -33,14 +33,11 @@ namespace H2Razor.Pages
             {
                 return Page();
             }
-
-            ToDo.CreatedTime = DateTime.Now;
-            ToDo.IsCompleted = false;
-            ToDo.Id = Guid.NewGuid().ToString();
-
-            _rep.SaveToDo(ToDo);
-            return RedirectToPage("index");
-
+            else
+            {
+                _rep.SaveToDo(ToDo);
+                return RedirectToPage("index");
+            }
         }
 
     }

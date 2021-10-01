@@ -19,25 +19,40 @@
         <form method="post">
             <table>
 
-                @foreach (var item in Model.toDoList)
-                {
-                    @if (item.IsCompleted == false)
-                    {
 
-                        <tr class="table">
-                            <td>@Html.DisplayFor(m => item.Id)</td>
-                            <td>@Html.DisplayFor(m => item.CreatedTime)</td>
-                            <td>@Html.DisplayFor(m => item.TaskDescription)</td>
-                            <td>@Html.DisplayFor(m => item.Priority)</td>
-                            <td>@Html.DisplayFor(m => item.IsCompleted)</td>
-                            @*  <td><button asp-page="./edit" asp-route-id="">edit</button></td>*@
-                            @*<td><a asp-page="./Edit" asp-route-id="@item.Id">Edit</a></td>*@
-                            <td> <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a></td>
-                        </tr>
+                <thead>
+                    <tr>
+                        <th>GUID</th>
+                        <th>Created time</th>
+                        <th>Task Description</th>
+                        <th>Priority</th>
+                        <th>Is completed</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    @foreach (var item in Model.toDoList)
+                    {
+                        @if (item.IsCompleted == false)
+                        {
+
+                            <tr class="table">
+                                <td>@Html.DisplayFor(m => item.Id)</td>
+                                <td>@Html.DisplayFor(m => item.CreatedTime)</td>
+                                <td>@Html.DisplayFor(m => item.TaskDescription)</td>
+                                <td>@Html.DisplayFor(m => item.Priority)</td>
+                                <td>@Html.DisplayFor(m => item.IsCompleted)</td>
+                                @*  <td><button asp-page="./edit" asp-route-id="">edit</button></td>*@
+                                @*<td><a asp-page="./Edit" asp-route-id="@item.Id">Edit</a></td>*@
+                                <td> <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a></td>
+                            </tr>
+
+                        }
 
                     }
-
-                }
+                </tbody>
             </table>
         </form>
     </div>

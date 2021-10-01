@@ -13,7 +13,7 @@ namespace H2Razor.Pages
     {
         private readonly IRepository _rep;
         [BindProperty]
-        public ToDo todo { get; set; }
+        public ToDo Todo { get; set; }
 
         public EditModel(IRepository rep)
         {
@@ -22,39 +22,25 @@ namespace H2Razor.Pages
 
         public void OnGet(string id)
         {
-            todo = _rep.GetAlltoDos().Find(x => x.Id == id);
+            Todo = _rep.GetAlltoDos().Find(x => x.Id == id);
             
 
         }
 
-        public void OnPost(string id)
+        public IActionResult OnPost(string id)
         {
-            todo.IsCompleted = Request.Form["IsCompleted"].Equals("true");
-            todo.TaskDescription = Request.Form["TaskDescription"];
-            todo.Priority = (Prio)Convert.ToInt32(Request.Form["prio"]);
-            todo.Id = Request.Form["id"];
-            todo.CreatedTime = DateTime.Parse(Request.Form["CreateDate"]);
+            Todo.IsCompleted = Request.Form["IsCompleted"].Equals("true");
+            Todo.TaskDescription = Request.Form["TaskDescription"];
+            Todo.Priority = (Prio)Convert.ToInt32(Request.Form["prio"]);
+            Todo.Id = Request.Form["id"];
+            Todo.CreatedTime = DateTime.Parse(Request.Form["CreateDate"]);
+            Todo.SqlID = Convert.ToInt32(Request.Form["SqlId"]);
             
-            _rep.UpdateToDo(todo);
+            _rep.UpdateToDo(Todo);
+
+
+            return RedirectToPage("index");
         }
 
-        public void OnPostEdit(string id)
-        {
-
-        }
-
-        //public ActionResult OnPost(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return null;
-        //    }
-            
-
-
-
-
-        //    return null;
-        //}
     }
 }
