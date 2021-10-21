@@ -8,24 +8,24 @@ GO
 
 CREATE TABLE [ToDo] (
   [ToDoID] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
-  [GUID] nvarchar(50),
-  [PriorityID] int,
-  [DescText] varchar(25),--Description
-  [CreatedTime] datetime,
-  [StatusID] int ,
-  [IsDeleted] bit 
+  [GUID] nvarchar(50) NOT NULL,
+  [PriorityID] int NOT NULL,
+  [DescText] varchar(25) NOT NULL,--Description
+  [CreatedTime] datetime NOT NULL,
+  [StatusID] int  NOT NULL,
+  [IsDeleted] bit NOT NULL
 )
 GO
 
 CREATE TABLE [Prioritys] (
   [PriorityID] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
-  [PriorityName] int --a int for the priority
+  [PriorityName] int NOT NULL --a int for the priority
 )
 GO
 
 CREATE TABLE [StatusCompleted] (
   [StatusID] int PRIMARY KEY IDENTITY(1,1) NOT NULL,
-  [Tilstand] int -- int to have as many status stages as wanted
+  [Tilstand] int NOT NULL -- int to have as many status stages as wanted
 )
 GO
 

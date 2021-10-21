@@ -7,6 +7,7 @@ using System.IO;
 using System.Xml.Serialization;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace H2Razor.Repository
 {
@@ -22,19 +23,24 @@ namespace H2Razor.Repository
             con = new SqlConnection(strCon);
         }
 
+        /// <summary>
+        /// Read all todos from Sql Database
+        /// </summary>
+        /// <returns>List of ToDo's</returns>
         public List<ToDo> GetAlltoDos()
         {
 
-            SqlCommand cmd = new SqlCommand("dbo.spReadAllToDo", con);
+            SqlCommand cmd = new SqlCommand("dbo.spReadAllToDo", con) 
             SqlDataReader dr;
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandType = CommandType.StoredProcedure;
             
             List<ToDo> tempList = new List<ToDo>();
 
-            con.Open();
+            
 
             try
             {
+                con.Open();
                 dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
@@ -87,6 +93,12 @@ namespace H2Razor.Repository
             return tempList;
         }
 
+        /// <summary>
+        /// Save all todos in XML
+        /// NO LONGER USED.
+        /// as its done with SQL.
+        /// </summary>
+        /// <param name="todo"></param>
         public void SaveAllToDos(List<ToDo> todo)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<ToDo>));
@@ -96,13 +108,16 @@ namespace H2Razor.Repository
             }
         }
 
+        /// <summary>
+        /// save a new ToDo in the sql data base
+        /// </summary>
+        /// <param name="todo"></param>
         public void SaveToDo(ToDo todo)
         {
             // List<ToDo> toDos = GetAlltoDos();
             // toDos.Add(todo);
             // SaveAllToDos(toDos);
             SqlCommand cmd = new SqlCommand("dbo.spCreateToDo", con);
-            SqlDataReader dr;
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("Description",todo.TaskDescription);
@@ -128,6 +143,11 @@ namespace H2Razor.Repository
 
         }
 
+        /// <summary>
+        /// Update ToDo i sql database with current todo
+        /// based on ID
+        /// </summary>
+        /// <param name="todo"></param>
         public void UpdateToDo(ToDo todo)
         {
 
@@ -162,6 +182,11 @@ namespace H2Razor.Repository
 
         }
 
+        /// <summary>
+        /// Delete ToDo from database
+        /// not really delete just change the IsDeleted bit to 1
+        /// </summary>
+        /// <param name="toDo"></param>
         public void DeleteToDo(ToDo toDo)
         {
             SqlCommand cmd = new SqlCommand("dbo.spDeleteToDo", con);
